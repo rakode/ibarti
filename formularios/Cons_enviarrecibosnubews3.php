@@ -125,14 +125,17 @@ $sql_contractos = "SELECT contractos.codigo, contractos.descripcion AS contracto
             <td id="select04">
                 <select name="co_contrato" id="co_contrato" style="width:200px;">
                     <option value="">Seleccione Contrato..</option>
-                    <option value="01">01 - Administrativo</option>
-                    <option value="04">04 - Oficiales</option>
+               	  <?php
+				    $query = $bd->consultar($sql_contractos);
+                     while($row02=$bd->obtener_fila($query,0)){
+						   echo '<option value="'.$row02[0].'">'.$row02[1].'</option>';
+					 }?>
                 </select>
                 <br><span class="selectRequiredMsg">Debe Seleccionar un Tipo de Contrato.</span>
             </td>
         </tr>
     </table>
-</form>
+
  
 <div align="center">  <span class="art-button-wrapper">
                     <span class="art-button-l"> </span>

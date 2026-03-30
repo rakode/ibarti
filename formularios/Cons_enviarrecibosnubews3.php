@@ -51,13 +51,9 @@ require_once('autentificacion/aut_verifica_menu.php');
 $bd = new DataBase();
 
 $sql_contractos = "SELECT contractos.codigo, contractos.descripcion AS contracto
-                     FROM usuario_roles , trab_roles, ficha , contractos
-			        WHERE usuario_roles.cod_usuario = '$usuario'
-			          AND usuario_roles.cod_rol = trab_roles.cod_rol
-				      AND trab_roles.cod_ficha = ficha.cod_ficha
-				      AND ficha.cod_contracto = contractos.codigo
-			     GROUP BY contractos.codigo
-			     ORDER BY 2 ASC ";
+                    FROM contractos
+			        WHERE contractos.codigo > 0
+			        ORDER BY 2 ASC ";
 ?>
 <br>
 <div align="center" class="etiqueta_title"> ENVAR RECIBOS A LA NUBE WS3</div>

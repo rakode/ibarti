@@ -34,6 +34,7 @@ $sql_contractos = "SELECT codigo, descripcion FROM contractos WHERE status = 'T'
 ?>
 <script language="javascript">
 
+
 function enviarDatosWebhook() {
     // 1. Capturamos los valores de los selectores por sus IDs
     const datos = {
@@ -139,6 +140,16 @@ function enviarDatosWebhook() {
                 <br><span class="selectRequiredMsg">Debe Seleccionar un Tipo de Contrato.</span>
             </td>
         </tr>
+        <tr>
+            <td class="etiqueta">Tipo de Documento:</td>
+            <td>
+                <input type="checkbox" name="tipo_recibo" id="tipo_recibo" value="recibo"> 
+                <label for="tipo_recibo">Recibos</label>
+                <br>
+                <input type="checkbox" name="tipo_cestaticket" id="tipo_cestaticket" value="cestaticket"> 
+                <label for="tipo_cestaticket">Cestaticket Humani</label>
+            </td>
+        </tr>
     </table>
     <br>
 
@@ -159,6 +170,7 @@ function enviarDatosWebhook() {
                     <input type="button" id="volver" value="Volver" onClick="history.back(-1);" class="readon art-button" />
                     </span>
         <input type="hidden" id="usuario" value="<?php echo $usuario;?>"/>
+
     </div>
 </form>
 <br />
